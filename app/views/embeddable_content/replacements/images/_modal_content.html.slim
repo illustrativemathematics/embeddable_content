@@ -1,0 +1,30 @@
+ruby:
+  manager         = @template_manager
+  node_processor  = manager.node_processor
+  modal_dialog    = node_processor.modal_dialog
+  img_tag_attrs   = modal_dialog.img_tag_attrs
+  description     = modal_dialog.description
+  described_by_id = modal_dialog.described_by_id
+  caption         = modal_dialog.caption
+  caption_id      = modal_dialog.caption_id
+  attribution     = modal_dialog.attribution
+  attribution_id  = modal_dialog.attribution_id
+
+div.im-c-modal__content.im-c-content
+  div id = described_by_id
+    - if description.present?
+      p
+        strong> Description:
+        = description
+  img *img_tag_attrs
+  - if caption.present?
+    p id = caption_id
+      strong> Caption:
+      = caption
+  - if attribution.present?
+    p id = attribution_id
+      strong> Attribution:
+      => attribution.display_text
+      a href = attribution.original_url
+        | Source
+      | .

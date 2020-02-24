@@ -1,0 +1,12 @@
+ruby:
+  manager        = @template_manager
+  node_processor = manager.node_processor
+  title          = node_processor.title
+  url            = node_processor.url
+
+span
+  | Video
+  =<> "'#{title}'"
+  | available here:
+  =< url
+  | .

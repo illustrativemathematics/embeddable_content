@@ -1,0 +1,9 @@
+ruby:
+  manager        = @template_manager
+  node_attrs     = manager.node_attrs
+  record         = manager.record
+  title          = record.title
+  applet_url     = record.applet_url
+
+span.embedded-content-described *node_attrs
+  | The Geogebra applet '#{title}' is available here: #{applet_url}.

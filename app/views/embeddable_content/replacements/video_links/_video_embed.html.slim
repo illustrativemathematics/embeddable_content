@@ -1,0 +1,13 @@
+ruby:
+  manager        = @template_manager
+  node_processor = manager.node_processor
+  node_attrs     = manager.node_attrs
+  presentation   = node_processor.presentation
+
+figure *node_attrs
+  span.c-figure__label
+    = node_processor.label_text
+  = render "embeddable_content/replacements/video_links/#{presentation}"
+  figcaption.c-figcaption
+    - if node_processor.display_caption?
+      = render 'embeddable_content/replacements/video_links/caption'

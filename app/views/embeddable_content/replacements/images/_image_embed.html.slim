@@ -1,0 +1,14 @@
+ruby:
+  manager        = @template_manager
+  node_attrs     = manager.node_attrs
+  node_processor = manager.node_processor
+  img_tag_attrs  = node_processor.img_tag_attrs
+  figure_tag     = node_processor.figure_tag
+  label_text     = node_processor.label_text
+
+*{ tag: figure_tag } *node_attrs
+  span.c-figure__label
+    = label_text
+  img *img_tag_attrs
+  = render 'embeddable_content/replacements/images/modal_dialog'
+  figcaption.c-figcaption

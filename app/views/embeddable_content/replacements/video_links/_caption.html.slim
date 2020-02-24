@@ -1,0 +1,13 @@
+ruby:
+  manager        = @template_manager
+  node_processor = manager.node_processor
+  title          = node_processor.title
+  url            = node_processor.url
+
+| Video
+em<>
+  = title
+| available at
+a< href = url
+  = url
+| .

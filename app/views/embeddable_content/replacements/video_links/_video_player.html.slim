@@ -1,0 +1,6 @@
+ruby:
+  manager        = @template_manager
+  node_processor = manager.node_processor
+  video_player   = node_processor.video_player
+
+= render "embeddable_content/replacements/video_links/#{video_player}"

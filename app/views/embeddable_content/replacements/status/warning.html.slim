@@ -1,0 +1,12 @@
+ruby:
+  manager          = @template_manager
+  error            = manager.error
+  node             = manager.node
+  backtrace_lines  = manager.selected_backtrace_lines
+
+div.embedded-content-warning
+  = "Unable to process #{node}"
+  span.embedded-content-error-backtrace
+    = error.message
+    = "\nBacktrace:\n"
+    = backtrace_lines

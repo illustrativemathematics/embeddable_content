@@ -3,14 +3,17 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'embeddable_content/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'embeddable_content'
-  spec.version       = EmbeddableContent::VERSION
-  spec.authors       = ['Eric Connally']
-  spec.email         = ['eric@illustrativemathematics.org']
+  spec.name    = 'embeddable_content'
+  spec.version = EmbeddableContent::VERSION
+  spec.authors = ['Eric Connally']
+  spec.email   = ['eric@illustrativemathematics.org']
 
-  spec.summary       = 'Embeddable Content functionality extracted from cms-im app.'
-  spec.description   = 'Provides embeddable content functionality to apps using this gem.'
-  spec.homepage      = 'https://github.com/illustrativemathematics/embedded_content'
+  spec.summary =
+    'Embeddable Content functionality extracted from cms-im app.'
+  spec.description =
+    'Provides embeddable content functionality to apps using this gem.'
+  spec.homepage =
+    'https://github.com/illustrativemathematics/embedded_content'
 
   # Prevent pushing this gem to RubyGems.org.
   # To allow pushes either set the 'allowed_push_host'
@@ -28,7 +31,7 @@ Gem::Specification.new do |spec|
   end
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = %w[lib]
+  spec.require_paths = %w[lib db]
 
   spec.add_dependency 'activerecord'
 

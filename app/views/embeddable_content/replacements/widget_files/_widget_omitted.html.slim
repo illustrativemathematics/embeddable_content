@@ -1,0 +1,8 @@
+ruby:
+  manager      = @template_manager
+  node_attrs   = manager.node_attrs
+  record       = manager.record
+  widget_attrs = node_attrs.merge 'data-record-title': record.title
+
+span.embedded-content-omitted *widget_attrs
+  | Applet appears here.

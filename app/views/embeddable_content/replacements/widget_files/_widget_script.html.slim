@@ -1,0 +1,13 @@
+ruby:
+  manager        = @template_manager
+  node_attrs     = manager.node_attrs
+  record         = manager.record
+  target_attrs   = manager.target_attrs
+  node_id        = manager.node_id
+  widget_attrs   = node_attrs.merge 'data-record-title': record.title
+  script_body    = record.interpolated_script_body node_id
+
+div *widget_attrs
+  div.widget-target-node *target_attrs
+  script
+    == script_body

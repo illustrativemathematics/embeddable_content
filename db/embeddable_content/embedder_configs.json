@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "target": "cms",
+    "scope": "document",
+    "output_format": "html",
+    "tex_output_format": "mathjax",
+    "render_images": false,
+    "remove_repaired_math_spans": false,
+    "replacement_map": {
+      "editable": {
+        "\\\\boldcdot": "\\bullet",
+        "\\\\\\$": "$"
+      }
+    },
+    "created_at": "2020-02-19T19:25:13.982Z",
+    "updated_at": "2020-02-19T19:25:13.982Z"
+  },
+  {
+    "id": 2,
+    "target": "print",
+    "scope": "document",
+    "output_format": "html",
+    "tex_output_format": "svg",
+    "render_images": true,
+    "remove_repaired_math_spans": false,
+    "replacement_map": {
+      "editable": {
+        "\\\\boldcdot": "\\bullet",
+        "\\\\\\$": "$"
+      }
+    },
+    "created_at": "2020-02-19T19:25:13.983Z",
+    "updated_at": "2020-02-19T19:25:13.983Z"
+  },
+  {
+    "id": 3,
+    "target": "web",
+    "scope": "document",
+    "output_format": "html",
+    "tex_output_format": "mathjax",
+    "render_images": false,
+    "remove_repaired_math_spans": false,
+    "replacement_map": {
+      "editable": {
+        "\\\\boldcdot": "\\bullet",
+        "\\\\\\$": "$"
+      }
+    },
+    "created_at": "2020-02-19T19:25:13.984Z",
+    "updated_at": "2020-02-19T19:25:13.984Z"
+  },
+  {
+    "id": 4,
+    "target": "editable",
+    "scope": "document",
+    "output_format": "html",
+    "tex_output_format": "mml",
+    "render_images": true,
+    "remove_repaired_math_spans": false,
+    "replacement_map": {
+      "editable": {
+        "\\\\boldcdot": "\\bullet",
+        "\\\\\\$": "$"
+      }
+    },
+    "created_at": "2020-02-19T19:25:13.985Z",
+    "updated_at": "2020-02-19T19:25:13.985Z"
+  },
+  {
+    "id": 5,
+    "target": "exported",
+    "scope": "fragment",
+    "output_format": "html",
+    "tex_output_format": "mathjax",
+    "render_images": true,
+    "remove_repaired_math_spans": false,
+    "replacement_map": {
+      "editable": {
+        "\\\\boldcdot": "\\bullet",
+        "\\\\\\$": "$"
+      }
+    },
+    "created_at": "2020-02-19T19:25:13.986Z",
+    "updated_at": "2020-02-19T19:25:13.986Z"
+  },
+  {
+    "id": 6,
+    "target": "qti",
+    "scope": "fragment",
+    "output_format": "html",
+    "tex_output_format": "mml",
+    "render_images": true,
+    "remove_repaired_math_spans": true,
+    "replacement_map": {
+      "editable": {
+        "\\\\boldcdot": "\\bullet",
+        "\\\\\\$": "$"
+      }
+    },
+    "created_at": "2020-02-19T19:25:13.987Z",
+    "updated_at": "2020-02-19T19:25:13.987Z"
+  },
+  {
+    "id": 7,
+    "target": "cc",
+    "scope": "fragment",
+    "output_format": "html",
+    "tex_output_format": "canvas",
+    "render_images": true,
+    "remove_repaired_math_spans": false,
+    "replacement_map": {
+      "editable": {
+        "\\\\boldcdot": "\\bullet",
+        "\\\\\\$": "$"
+      }
+    },
+    "created_at": "2020-02-19T19:25:13.987Z",
+    "updated_at": "2020-02-19T19:25:13.987Z"
+  }
+]

@@ -1,0 +1,17 @@
+ruby:
+  manager        = @template_manager
+  node_processor = manager.node_processor
+
+  return unless node_processor.display_modal_dialog?
+
+  modal_dialog    = node_processor.modal_dialog
+  container_attrs = modal_dialog.container_attrs
+  target_attrs    = modal_dialog.target_attrs
+
+span.embedded-modal-dialog
+  = render 'embeddable_content/replacements/images/button_open'
+  div.im-c-modal *target_attrs
+    div.js-modal-close.im-c-modal__overlay
+    div.im-c-modal__container *container_attrs
+      = render 'embeddable_content/replacements/images/button_close'
+      = render 'embeddable_content/replacements/images/modal_content'

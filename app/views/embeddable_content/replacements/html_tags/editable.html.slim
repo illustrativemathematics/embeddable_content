@@ -1,0 +1,16 @@
+ruby:
+  manager        = @template_manager
+  node_attrs     = manager.node_attrs
+  node_processor = manager.node_processor
+  data_rows      = node_processor.data_rows
+
+div *node_attrs
+  table
+    tbody
+      - data_rows.each do |data_row|
+        tr
+          - data_row.each do |data_val|
+            td = data_val
+  p
+  p
+  br

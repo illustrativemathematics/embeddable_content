@@ -1,0 +1,10 @@
+ruby:
+  manager        = @template_manager
+  node_processor = manager.node_processor
+  modal_dialog   = node_processor.modal_dialog
+  target_div_id  = modal_dialog.target_div_id
+
+button.im-c-button.im-c-modal-trigger data-modal-target = target_div_id
+  p
+    img src = asset_path('expand.png')
+    = trans :expand_image

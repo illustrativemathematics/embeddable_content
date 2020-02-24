@@ -1,0 +1,8 @@
+ruby:
+  manager        = @template_manager
+  node_attrs     = manager.node_attrs
+  record         = manager.record
+  applet_attrs   = node_attrs.merge 'data-state': record.state
+
+div *applet_attrs
+  div.desmos-calculator

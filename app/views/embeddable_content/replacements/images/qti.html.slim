@@ -1,0 +1,6 @@
+ruby:
+  manager        = @template_manager
+  node_processor = manager.node_processor
+  img_tag_attrs  = node_processor.img_tag_attrs
+
+img *img_tag_attrs

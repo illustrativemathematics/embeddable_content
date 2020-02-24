@@ -1,0 +1,9 @@
+ruby:
+  manager            = @template_manager
+  node_processor     = manager.node_processor
+  modal_dialog       = node_processor.modal_dialog
+  close_button_attrs = modal_dialog.close_button_attrs
+
+button.js-modal-close.im-c-modal__close
+  svg.im-c-icon.im-c-icon--close *close_button_attrs
+    path d = 'M1162.5,198.75,1001.25,37.5,600,438.75,198.75,37.5,37.5,198.75,438.75,600,37.5,1001.25,198.75,1162.5,600,761.25l401.25,401.25,161.25-161.25L761.25,600Z'
