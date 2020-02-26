@@ -1,9 +1,10 @@
 ruby:
-  manager        = @template_manager
-  node_attrs     = manager.node_attrs
-  target_attrs   = manager.target_attrs
-  record         = manager.record
-  data_attrs     = { 'data-parameters': record.data_parameters }
+  manager         = @template_manager
+  node_processor  = manager.node_processor
+  node_attrs      = manager.node_attrs
+  target_attrs    = manager.target_attrs
+  record          = manager.record
+  data_attrs      = { 'data-parameters': node_processor.data_parameters }
 
 div *node_attrs
   div.ggb-base-64-data *data_attrs
