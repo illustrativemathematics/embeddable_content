@@ -19,6 +19,12 @@ module EmbeddableContent
           role:  :image }
       end
 
+      def attribution_display_text
+        [attribution.owner_and_title_info,
+         attribution.license.name,
+         attribution.via_reference].join('. ').strip + '.'
+      end
+
       def container_attrs
         { tabindex:           '-1',
           role:               'dialog',
