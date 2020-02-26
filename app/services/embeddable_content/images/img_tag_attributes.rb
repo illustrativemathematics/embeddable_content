@@ -1,6 +1,8 @@
 module EmbeddableContent
   module Images
     class ImgTagAttributes
+      include Images::Shared
+
       attr_reader :node_processor
 
       delegate :alt_text, :attached_file, :cms_url, :embedder, :image_height,
@@ -14,7 +16,7 @@ module EmbeddableContent
       end
 
       def to_h
-        { alt:    alt_text,
+        { alt:    strip_tags(alt_text),
           role:   :image,
           src:    src,
           height: height,

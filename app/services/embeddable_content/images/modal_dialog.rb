@@ -1,6 +1,8 @@
 module EmbeddableContent
   module Images
     class ModalDialog
+      include Images::Shared
+
       attr_reader :node_processor
 
       delegate :record_css_id_for, :storage_url, :caption, :attribution,
@@ -13,7 +15,7 @@ module EmbeddableContent
       def img_tag_attrs
         { src:   storage_url,
           width: '80%',
-          alt:   alt_text,
+          alt:   strip_tags(alt_text),
           role:  :image }
       end
 
