@@ -5,10 +5,10 @@ module EmbeddableContent
 
       attr_reader :node_processor
 
-      delegate :alt_text, :attached_file, :cms_url, :embedder, :image_height,
-               :image_width, :record, :s3_url, :svg_height, :svg_width,
-               :storage_url, :target, :temp_file_url, :node,
-               to: :node_processor
+      delegate :alt_text, :attached_file, :record,
+               :cms_url, :s3_url, :storage_url, :target,
+               :node,    to: :node_processor
+      delegate :image,   to: :record
       delegate :raw_svg, to: :image_downloader
 
       def initialize(node_processor)
@@ -28,7 +28,7 @@ module EmbeddableContent
         case target
         when :cc             then s3_url(with_extension: true)
         when :cms            then cms_url
-        when :editable       then temp_file_url
+        when :editable       then downloaded_file_url
         when :exported, :qti then s3_url
         when :print, :web    then storage_url
         end
@@ -55,15 +55,14 @@ module EmbeddableContent
       end
 
       def svg_image?
-        record.image.attached? &&
-          record.image.content_type == 'image/svg+xml'
+        image.attached? && image.content_type == 'image/svg+xml'
       end
 
       def use_original_svg_dimensions_for_converted_png_file?
         svg_image? && svg_document.present?
       end
 
-      def temp_file_url
+      def downloaded_file_url
         downloaded_image.to_path
       end
 
@@ -111,7 +110,7 @@ module EmbeddableContent
       IMAGE_DIMENSION_REGEX  = /(\d+)x(\d+)/.freeze
 
       def run_image_dimension_script
-        `#{IMAGE_DIMENSION_SCRIPT} #{temp_file_url}`
+        `#{IMAGE_DIMENSION_SCRIPT} #{downloaded_file_url}`
       end
 
       def image_dimensions

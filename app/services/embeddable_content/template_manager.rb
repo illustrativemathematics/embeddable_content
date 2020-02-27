@@ -82,8 +82,7 @@ module EmbeddableContent
     end
 
     def warning_node_path
-      @warning_node_path ||=
-        status_template_path('warning').tap { |p| Rails.logger.debug "******* warning_node_path: #{p}" }
+      @warning_node_path ||= status_template_path 'warning'
     end
 
     def status_template_path(status)
@@ -95,7 +94,7 @@ module EmbeddableContent
     end
 
     def templates_dir
-      @templates_dir ||= Pathname.new('embeddable_content').join('replacements').tap { |p| Rails.logger.debug "******* templates_dir: #{p}" }
+      @templates_dir ||= Pathname.new('embeddable_content').join 'replacements'
     end
   end
 end
