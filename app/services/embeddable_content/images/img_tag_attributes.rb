@@ -5,7 +5,7 @@ module EmbeddableContent
 
       attr_reader :node_processor
 
-      delegate :alt_text, :attached_file, :record,
+      delegate :alt_text, :attached_file, :record, :aria_attrs?,
                :cms_url, :s3_url, :storage_url, :target,
                :node,    to: :node_processor
       delegate :image,   to: :record
@@ -17,11 +17,10 @@ module EmbeddableContent
 
       def to_h
         { alt:    strip_tags(alt_text),
-          role:   :image,
           src:    src,
           height: height,
           class:  css_classes,
-          width:  width }.compact
+          width:  width }.merge(aria_attrs).compact
       end
 
       def src
@@ -49,6 +48,10 @@ module EmbeddableContent
       end
 
       private
+
+      def aria_attrs
+        aria_attrs? ? { role: :image } : { }
+      end
 
       def css_classes
         node.classes.any? ? node.classes.join(' ') : nil

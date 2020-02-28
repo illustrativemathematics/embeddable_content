@@ -9,7 +9,7 @@ module EmbeddableContent
 
     delegate :tex_output_format, :render_images?, :scope, :xml?,
              :output_format, :fragment?, :remove_repaired_math_spans?,
-             :replacement_map, :all_other_targets,
+             :replacement_map, :all_other_targets, :aria_attrs?,
              to: :config
 
     def self.default_s3_bucket

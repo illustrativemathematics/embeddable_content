@@ -34,4 +34,9 @@ class EmbedderConfig < ApplicationRecord
   def all_other_targets
     @all_other_targets ||= ALL_TARGETS - [target.to_sym]
   end
+
+  # EDC: this could be added to field on table
+  def aria_attrs?
+    !qti?
+  end
 end
