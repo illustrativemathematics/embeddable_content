@@ -50,6 +50,6 @@ class EmbeddableModelConfig < ApplicationRecord
   def styled_indicator_selector(tree_node: nil)
     return embeddable_tag_name unless tree_based? && tree_node.present?
 
-    "#{embeddable_tag_name}[data-tree-ref-id=\"#{tree_node.ref_id}\"]"
+    "#{embeddable_tag_name}[data-tree-ref-id=\"#{tree_node.ref_id}\"]".html_safe
   end
 end
