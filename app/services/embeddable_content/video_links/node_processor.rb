@@ -12,7 +12,7 @@ module EmbeddableContent
         end
       end
 
-      PLAYER_PRESENTATION_TARGETS      = %i[cc cms exported qti web].freeze
+      PLAYER_PRESENTATION_TARGETS      = %i[cc schoology cms exported qti web].freeze
       DESCRIPTION_PRESENTATION_TARGETS = %i[editable print].freeze
       def presentation
         case target
@@ -22,7 +22,7 @@ module EmbeddableContent
         end
       end
 
-      CAPTIONED_TARGETS   = %i[cc cms qti web].freeze
+      CAPTIONED_TARGETS   = %i[cc schoology cms qti web].freeze
       UNCAPTIONED_TARGETS = %i[editable exported print].freeze
       def display_caption?
         case target

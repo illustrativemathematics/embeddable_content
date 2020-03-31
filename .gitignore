@@ -9,3 +9,7 @@ spec/dummy/.sass-cache
 tmp/
 
 Gemfile.lock
+
+.generators
+.idea/
+.rakeTasks
