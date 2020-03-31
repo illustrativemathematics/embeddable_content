@@ -117,5 +117,22 @@
     },
     "created_at": "2020-02-19T19:25:13.987Z",
     "updated_at": "2020-02-19T19:25:13.987Z"
+  },
+  {
+    "id": 8,
+    "target": "schoology",
+    "scope": "fragment",
+    "output_format": "html",
+    "tex_output_format": "inline_svg",
+    "render_images": true,
+    "remove_repaired_math_spans": false,
+    "replacement_map": {
+      "editable": {
+        "\\\\boldcdot": "\\bullet",
+        "\\\\\\$": "$"
+      }
+    },
+    "created_at": "2020-02-19T19:25:13.987Z",
+    "updated_at": "2020-02-19T19:25:13.987Z"
   }
 ]

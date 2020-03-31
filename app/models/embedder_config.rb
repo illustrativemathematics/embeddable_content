@@ -1,12 +1,13 @@
 class EmbedderConfig < ApplicationRecord
   TARGET_CATEGORY_ENUM_CONSULT_BEFORE_CHANGING =
-    { cms:      0,
-      print:    1,
-      web:      2,
-      editable: 3,
-      exported: 4,
-      qti:      5,
-      cc:       6 }.freeze
+    { cms:        0,
+      print:      1,
+      web:        2,
+      editable:   3,
+      exported:   4,
+      qti:        5,
+      cc:         6,
+      schoology:  7 }.freeze
   SCOPE_CATEGORY_ENUM_CONSULT_BEFORE_CHANGING =
     { document: 0,
       fragment: 1 }.freeze
@@ -14,7 +15,8 @@ class EmbedderConfig < ApplicationRecord
     { mathjax: 0,
       svg:     1,
       mml:     2,
-      canvas:  3 }.freeze
+      canvas:  3,
+      inline_svg: 4}.freeze
   OUTPUT_FORMAT_CONSULT_BEFORE_CHANGING =
     { html: 0,
       xml:  1 }.freeze

@@ -1,0 +1,62 @@
+require:
+  - rubocop-rails
+
+Style/Documentation:
+  Enabled: false
+Layout/ArgumentAlignment:
+  Enabled: false
+Layout/HashAlignment:
+  Enabled: false
+Layout/ParameterAlignment:
+  Enabled: false
+Layout/LeadingCommentSpace:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Rails/InverseOf:
+  Enabled: false
+Metrics/MethodLength:
+  Exclude:
+    - config/routes//**/*.rb
+Metrics/BlockLength:
+  ExcludedMethods:
+    [
+      "describe",
+      "described_class",
+      "context",
+      "scenario",
+      "feature",
+      "let",
+      "shared_examples",
+      "shared_examples_for",
+      "shared_context",
+      "before",
+    ]
+  Exclude:
+    - "*.gemspec"
+    - db/schema.rb
+    - db/migrate/*.rb
+    - config/initializers/**/*.rb
+    - config/routes.rb
+    - config/routes/**/*.rb
+    - spec/factories/*.rb
+    - spec/policies/**/*.rb
+    - spec/system/**/*.rb
+Security/YAMLLoad:
+  Exclude:
+    - spec/support/shared_examples/embeddable_content.rb
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - bin/*
+    - Rakefile
+    - config/environments/production.rb
+    - config/initializers/backtrace_silencers.rb
+    - config/initializers/devise.rb
+    - config/initializers/simple_form.rb
+    - config/initializers/wrap_parameters.rb
+    - config/puma.rb
+    - db/migrate/*.rb
+    - db/seeds.rb
