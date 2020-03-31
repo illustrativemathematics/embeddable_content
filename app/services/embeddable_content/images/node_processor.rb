@@ -19,7 +19,8 @@ module EmbeddableContent
       end
 
       TARGETS_THAT_USE_DIV_TAGS    = %i[editable].freeze
-      TARGETS_THAT_USE_FIGURE_TAGS = %i[cms print web exported qti cc].freeze
+      TARGETS_THAT_USE_FIGURE_TAGS = %i[cms print web exported qti cc schoology]
+                                     .freeze
       def figure_tag
         case target
         when *TARGETS_THAT_USE_DIV_TAGS     then :div
