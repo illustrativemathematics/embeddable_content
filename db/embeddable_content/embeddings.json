@@ -99,7 +99,8 @@
       "editable",
       "exported",
       "qti",
-      "cc"
+      "cc",
+      "schoology"
     ],
     "run_order": "math_typesetting",
     "created_at": "2020-02-19T19:25:13.955Z",

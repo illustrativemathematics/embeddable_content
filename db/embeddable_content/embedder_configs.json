@@ -123,7 +123,7 @@
     "target": "schoology",
     "scope": "fragment",
     "output_format": "html",
-    "tex_output_format": "inline_svg",
+    "tex_output_format": "svg",
     "render_images": true,
     "remove_repaired_math_spans": false,
     "replacement_map": {
