@@ -1,0 +1,12 @@
+ruby:
+  manager        = @template_manager
+  node_processor = manager.node_processor
+  record         = manager.record
+  caption        = record.caption
+  img_tag_attrs  = node_processor.img_tag_attrs
+
+div
+  img *img_tag_attrs
+  - if caption.present?
+    span.embedded-image-caption
+      == caption
