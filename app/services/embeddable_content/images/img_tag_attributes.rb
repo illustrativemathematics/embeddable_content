@@ -23,7 +23,6 @@ module EmbeddableContent
           width:  width }.merge(aria_attrs).compact
       end
 
-      # TODO: should this be abstracted?
       def src
         case target
         when :schoology      then s3_url(with_extension: true)
@@ -35,7 +34,6 @@ module EmbeddableContent
         end
       end
 
-      # TODO: should this be abstracted?
       def width
         case target
         when :editable then width_for_editable_target
