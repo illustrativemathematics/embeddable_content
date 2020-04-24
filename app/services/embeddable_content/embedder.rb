@@ -53,8 +53,6 @@ module EmbeddableContent
     end
 
     def perform_replacements
-      rep = replacements
-      puts rep
       replacements.each { |old, new| html.gsub! old, new }
     end
 
