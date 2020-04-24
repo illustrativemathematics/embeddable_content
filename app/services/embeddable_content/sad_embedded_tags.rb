@@ -1,15 +1,15 @@
 module EmbeddableContent
   class SadEmbeddedTags
-    attr_accessor :root_node, :sad_related_records, :embedded_models
+    attr_accessor :ed_node, :sad_related_records, :embedded_models
 
-    def initialize(root_node, embedded_models)
-      @root_node = root_node
-      @sad_related_records = SadRelatedRecords.new root_node
+    def initialize(ed_node, embedded_models)
+      @ed_node = ed_node
+      @sad_related_records = SadRelatedRecords.new ed_node
       @embedded_models     = embedded_models
     end
 
     def each
-      @root_node.tags.each do |tag|
+      @ed_node.tags.each do |tag|
         tag.html_attrs.each do |attr|
           EmbeddedTags.new(tag, attr, embedded_models).each do |info|
             yield nil, nil, info
