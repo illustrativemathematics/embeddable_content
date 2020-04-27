@@ -7,7 +7,7 @@ module EmbeddableContent
     attr_reader :node_processor
 
     delegate :record, :node, :node_type, :error, :node_selector_class,
-             :node_index,
+             :node_added_classes, :node_index,
              to: :node_processor
 
     def initialize(node_processor)
@@ -60,7 +60,9 @@ module EmbeddableContent
     end
 
     def node_classes
-      ['embedded-content', node_selector_class].compact
+      ['embedded-content',
+       node_selector_class,
+       node_added_classes].flatten.compact
     end
 
     def render_target

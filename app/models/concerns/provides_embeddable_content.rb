@@ -24,6 +24,10 @@ module ProvidesEmbeddableContent
                                            embeddable_tag_attrs(opts)
   end
 
+  def template_based?
+    defined?(super) ? super : false
+  end
+
   private
 
   def convert_safe_buffer_to_string(safe_buffer)

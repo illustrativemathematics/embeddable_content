@@ -5,6 +5,7 @@ module EmbeddableContent
     RECORD_BLANK_BY_DEFAULT          = nil
     ALL_TARGETS_PROCESSED_BY_DEFAULT = EmbedderConfig::ALL_TARGETS
     DEFAULT_TEMPLATE_MANAGER_CLASS   = TemplateManager
+    ADDED_CLASSES_BLANK_BY_DEFAULT   = [].freeze
 
     attr_reader :node, :node_index, :doc_processor, :error
 
@@ -27,6 +28,10 @@ module EmbeddableContent
 
     def node_selector_class
       SELECTOR_CLASS_BLANK_BY_DEFAULT
+    end
+
+    def node_added_classes
+      ADDED_CLASSES_BLANK_BY_DEFAULT
     end
 
     def record
