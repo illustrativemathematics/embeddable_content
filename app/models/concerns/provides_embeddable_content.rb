@@ -20,8 +20,7 @@ module ProvidesEmbeddableContent
   end
 
   def embeddable_tag(opts = {})
-    convert_safe_buffer_to_string tag.send embeddable_tag_name,
-                                           embeddable_tag_attrs(opts)
+    convert_safe_buffer_to_string tag(embeddable_tag_name, embeddable_tag_attrs(opts))
   end
 
   def template_based?
