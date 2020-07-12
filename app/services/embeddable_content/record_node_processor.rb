@@ -28,7 +28,11 @@ module EmbeddableContent
     end
 
     def storage_url
-      blob.service_url content_type: content_type
+      if Rails.env.test?
+        ActiveStorage::Blob.service.send(:path_for, blob.key)
+      else
+        blob.service_url(content_type: content_type)
+      end
     end
 
     def attached_file
