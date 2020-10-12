@@ -29,7 +29,9 @@ module EmbeddableContent
 
     def storage_url
       if Rails.env.test?
-        ActiveStorage::Blob.service.send(:path_for, blob.key)
+        Pathname
+          .new(ActiveStorage::Blob.service.send(:path_for, blob.key))
+          .relative_path_from Rails.root
       else
         blob.service_url(content_type: content_type)
       end
