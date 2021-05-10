@@ -6,7 +6,7 @@ ruby:
   img_tag_attrs  = node_processor.img_tag_attrs
 
 div
-  img *img_tag_attrs
   - if caption.present?
     span.embedded-image-caption
       == caption
+  img *img_tag_attrs
