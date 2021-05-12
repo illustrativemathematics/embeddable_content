@@ -6,7 +6,7 @@ module EmbeddableContent
       attr_reader :node_processor
 
       delegate :alt_text, :attached_file, :record, :aria_attrs?,
-               :cms_url, :s3_url, :storage_url, :target,
+               :cms_url, :s3_url, :s3_ttl_service_url, :target,
                :node,    to: :node_processor
       delegate :image,   to: :record
       delegate :raw_svg, to: :image_downloader
@@ -25,12 +25,12 @@ module EmbeddableContent
 
       def src
         case target
-        when :schoology      then s3_url(with_extension: true)
-        when :cc             then s3_url(with_extension: true)
+        when :schoology      then s3_url with_extension: false
+        when :cc             then s3_url with_extension: false
         when :cms            then cms_url
         when :editable       then downloaded_file_url
-        when :exported, :qti then s3_url
-        when :print, :web    then storage_url
+        when :exported, :qti then s3_url with_extension: false
+        when :print, :web    then s3_ttl_service_url
         end
       end
 

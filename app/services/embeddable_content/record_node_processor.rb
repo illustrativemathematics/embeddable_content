@@ -27,7 +27,7 @@ module EmbeddableContent
       src_url
     end
 
-    def storage_url
+    def s3_ttl_service_url
       if Rails.env.test?
         Pathname
           .new(ActiveStorage::Blob.service.send(:path_for, blob.key))
