@@ -67,11 +67,11 @@ module EmbeddableContent
       end
 
       def attachment_url_response
-        @attachment_url_response ||= Net::HTTP.get_response storage_uri
+        @attachment_url_response ||= Net::HTTP.get_response s3_ttl_service_uri
       end
 
-      def storage_uri
-        @storage_uri ||= URI.parse storage_url
+      def s3_ttl_service_uri
+        @s3_ttl_service_uri ||= URI.parse s3_ttl_service_url
       end
 
       def attachment_status_matters?
