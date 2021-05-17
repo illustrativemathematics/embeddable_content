@@ -35,6 +35,22 @@ module EmbeddableContent
                      self.class.default_s3_bucket
     end
 
+    def ed_node
+      @ed_node ||= options[:ed_node]
+    end
+
+    def tree_node
+      @tree_node ||= ed_node&.root
+    end
+
+    def tree
+      @tree ||= tree_node&.ref
+    end
+
+    def locale
+      @locale ||= tree&.locale
+    end
+
     private
 
     def module_name
