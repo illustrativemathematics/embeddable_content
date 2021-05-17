@@ -3,7 +3,8 @@ module EmbeddableContent
     class AttributionsProcessor
       attr_reader :image_processor
 
-      delegate :target, :document, :image_catalog, to: :image_processor
+      delegate :embedder, :target, :document, :image_catalog, to: :image_processor
+      delegate :locale, to: :embedder
 
       TARGETS_NEEDING_ATTRIBUTIONS = %i[print].freeze
       ATTRIBUTIONS_PARTIAL = 'export/shared/attributions_images'.freeze
@@ -41,6 +42,10 @@ module EmbeddableContent
       end
 
       def attributions_html
+        I18n.with_locale(locale) { render_html }
+      end
+
+      def render_html
         ApplicationController.renderer.render(
           partial: ATTRIBUTIONS_PARTIAL,
           locals:  { image_files: image_catalog }

@@ -19,13 +19,5 @@ module EmbeddableContent
     def tree_embedder_tag_id
       tree_node&.embedder_tag_id
     end
-
-    def ed_node
-      @ed_node ||= options[:ed_node]
-    end
-
-    def tree_node
-      @tree_node ||= ed_node&.root
-    end
   end
 end

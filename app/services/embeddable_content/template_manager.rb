@@ -66,7 +66,7 @@ module EmbeddableContent
     end
 
     def render_target
-      render_path target_path
+      I18n.with_locale(locale) { render_path target_path }
     end
 
     def render_path(path)
