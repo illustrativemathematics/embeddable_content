@@ -12,8 +12,11 @@ module EmbeddableContent
         end
       end
 
-      PLAYER_PRESENTATION_TARGETS      = %i[cc schoology cms exported qti web].freeze
+      # TODO: make this a field on the embed
+      PLAYER_PRESENTATION_TARGETS =
+        %i[cc kiddom schoology cms exported qti web].freeze
       DESCRIPTION_PRESENTATION_TARGETS = %i[editable print].freeze
+
       def presentation
         case target
         when *PLAYER_PRESENTATION_TARGETS      then :video_player
@@ -22,8 +25,11 @@ module EmbeddableContent
         end
       end
 
-      CAPTIONED_TARGETS   = %i[cc schoology cms qti web].freeze
+      # TODO: make this a field on the embed
+      CAPTIONED_TARGETS =
+        %i[cc kiddom schoology cms qti web].freeze
       UNCAPTIONED_TARGETS = %i[editable exported print].freeze
+
       def display_caption?
         case target
         when *CAPTIONED_TARGETS   then true

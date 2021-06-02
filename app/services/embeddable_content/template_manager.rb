@@ -1,7 +1,7 @@
 module EmbeddableContent
   class TemplateManager < EmbedderBase
-    DEFAULT_NUM_BACKTRACE_LINES    = 100
-    NUM_BACKTRACE_LINES            =
+    DEFAULT_NUM_BACKTRACE_LINES = 10
+    NUM_BACKTRACE_LINES =
       ENV.fetch('NUM_BACKTRACE_LINES', DEFAULT_NUM_BACKTRACE_LINES).try :to_i
 
     attr_reader :node_processor
@@ -71,8 +71,6 @@ module EmbeddableContent
 
     def render_path(path)
       ApplicationController.render rendering_options_for path
-    rescue ActionView::MissingTemplate
-      nil
     end
 
     def rendering_options_for(path)
