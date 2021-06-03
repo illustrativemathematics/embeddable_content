@@ -25,19 +25,18 @@ module EmbeddableContent
 
       def src
         case target
-        when :schoology      then s3_url with_extension: false
-        when :cc             then s3_url with_extension: false
-        when :cms            then cms_url
-        when :editable       then downloaded_file_url
-        when :exported, :qti then s3_url with_extension: false
-        when :print, :web    then s3_ttl_service_url
+        when :schoology, :cc, :kiddom then s3_url with_extension: false
+        when :cms                     then cms_url
+        when :editable                then downloaded_file_url
+        when :exported, :qti          then s3_url with_extension: false
+        when :print, :web             then s3_ttl_service_url
         end
       end
 
       def width
         case target
         when :editable then width_for_editable_target
-        when :cc, :qti, :schoology then image_width
+        when :cc, :kiddom, :qti, :schoology then image_width
         end
       end
 
@@ -45,14 +44,14 @@ module EmbeddableContent
       def height
         case target
         when :editable then height_for_editable_target
-        when :cc, :qti, :schoology then image_height
+        when :cc, :kiddom, :qti, :schoology then image_height
         end
       end
 
       private
 
       def aria_attrs
-        aria_attrs? ? { role: :image } : { }
+        aria_attrs? ? { role: :image } : {}
       end
 
       def css_classes
