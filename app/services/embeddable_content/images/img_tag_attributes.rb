@@ -2,7 +2,6 @@ module EmbeddableContent
   module Images
     class ImgTagAttributes
       include Images::Shared
-
       attr_reader :node_processor
 
       delegate :alt_text, :attached_file, :record, :aria_attrs?,
@@ -103,11 +102,11 @@ module EmbeddableContent
       end
 
       def image_width
-        image_dimensions[1]
+        image.metadata[:width] || image_dimensions[1]
       end
 
       def image_height
-        image_dimensions[2]
+        image.metadata[:height] || image_dimensions[2]
       end
 
       IMAGE_DIMENSION_SCRIPT = %(identify -ping -format "%[w]x%[h]").freeze
