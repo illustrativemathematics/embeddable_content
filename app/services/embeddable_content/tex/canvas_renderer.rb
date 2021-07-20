@@ -4,7 +4,7 @@ module EmbeddableContent
   module Tex
     class CanvasRenderer < BaseRenderer
       def target_format
-        nil
+        :canvas
       end
 
       def render_format(_format)
