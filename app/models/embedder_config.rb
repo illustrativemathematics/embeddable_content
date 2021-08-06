@@ -16,7 +16,8 @@ class EmbedderConfig < ApplicationRecord
     { mathjax: 0,
       svg:     1,
       mml:     2,
-      canvas:  3 }.freeze
+      canvas:  3,
+      schoology_string: 4}.freeze
   OUTPUT_FORMAT_CONSULT_BEFORE_CHANGING =
     { html: 0,
       xml:  1 }.freeze
