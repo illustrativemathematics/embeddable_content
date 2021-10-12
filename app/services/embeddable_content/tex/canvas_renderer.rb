@@ -7,8 +7,8 @@ module EmbeddableContent
         :canvas
       end
 
-      def render_format(_format)
-        Mathjax::CanvasRenderer.new(html).render
+      def render
+        html.replace Mathjax::CanvasRenderer.new(html).render
       end
     end
   end
