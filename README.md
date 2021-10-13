@@ -2,6 +2,8 @@
 
 Embedder functionality has been extracted to this gem to reduce client-app dependencies.
 
+[![Gem Version](https://badge.fury.io/rb/embeddable_content.svg)](https://badge.fury.io/rb/embeddable_content)
+
 ## Installation
 
 For IM gems, add this to your application's Gemfile:
