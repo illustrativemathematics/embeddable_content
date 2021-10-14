@@ -1,3 +1,4 @@
+embeddable_content-*.gem
 .bundle/
 log/*.log
 pkg/
