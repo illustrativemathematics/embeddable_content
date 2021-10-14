@@ -1,7 +1,8 @@
 module EmbeddableContent
   class DocProcessor < EmbedderBase
-    PROCESS_NODES_BY_DEFAULT = true
+    include HasMoveableNodes
 
+    PROCESS_NODES_BY_DEFAULT = true
     attr_reader :embedder
 
     delegate :document, :html, :rebuild_document, to: :embedder
@@ -28,10 +29,16 @@ module EmbeddableContent
     private
 
     def refresh_html
-      html.replace document.to_s
+      html.replace document.to_html
     end
 
-    def pre_process; end
+    def pre_process
+      update_moveable_nodes if update_moveable_nodes?
+    end
+
+    def update_moveable_nodes?
+      false
+    end
 
     def process_matching_nodes
       matching_nodes.each.with_index(1) { |node, idx| process_node(node, idx) }

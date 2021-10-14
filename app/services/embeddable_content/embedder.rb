@@ -18,7 +18,7 @@ module EmbeddableContent
       perform_replacements
       run_doc_processors
       write_embedded_html_to_tmp_file if debug_embedder?
-      @html
+      @html.replace document.to_html.lstrip
     end
 
     def rebuild_document

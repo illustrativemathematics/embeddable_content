@@ -6,7 +6,7 @@ ruby:
 
 figure *node_attrs
   span.c-figure__label
-    = node_processor.label_text
+    == node_processor.label_text
   = render "embeddable_content/replacements/video_links/#{presentation}"
   figcaption.c-figcaption
     - if node_processor.display_caption?

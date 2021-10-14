@@ -49,3 +49,27 @@ and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 Bug reports and pull requests are welcome on GitHub at
 https://github.com/illustrativemathematics/embeddable_content.
+
+## Notes
+
+To update a version of this gem:
+1. Update version number in `lib/embeddable_content/version.rb`.
+2. Run:
+
+``` bash
+$ gem build embeddable_content.gemspec
+```
+3. A new gem file will be created,
+   e.g. `embeddable_content-0.2.0.gem`. Run:
+
+``` bash
+$ gem push embeddable_content-0.2.0.gem
+```
+
+## Versions
+
+| Version | Changes                                                                                                       |
+| ---     | ---                                                                                                           |
+| 0.4.0   | Adapt gem to make full use of TexExpression model.
+| 0.3.1   | Meaningless change as I (EDC) experiment with gem host.                                                       |
+| 0.2.0   | NIMAS export now using embedder for TeX. However, the embedder is not yet using the full TexExprssions model. |
