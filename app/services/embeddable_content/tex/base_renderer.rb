@@ -5,7 +5,7 @@ module EmbeddableContent
     class BaseRenderer
       attr_reader :document, :math_span
 
-      delegate :displaystyle?, :mml, :svg, :tex_string,
+      delegate :displaystyle?, :mathjax, :mml, :svg, :tex_string,
                to: :tex_expression
 
       def initialize(math_span, document)
