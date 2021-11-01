@@ -5,10 +5,6 @@ module EmbeddableContent
     class MmlRenderer < BaseRenderer
       private
 
-      def alttext
-        displaystyle? ? tex_string.gsub('\\displaystyle', '').strip : tex_string
-      end
-
       # TODO: update this once embedder specs working
       def replacement_css_classes
         @replacement_css_classes ||=
@@ -22,7 +18,7 @@ module EmbeddableContent
       def math_node
         super.tap do |node|
           node['display'] = 'block' if displaystyle?
-          node['alttext'] = alttext
+          node['alttext'] = unadorned_tex_string
         end
       end
     end
