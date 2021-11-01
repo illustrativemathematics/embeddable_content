@@ -1,7 +1,7 @@
 module EmbeddableContent
   module VideoLinks
     class DocProcessor < EmbeddableContent::DocProcessor
-      TARGETS_FOR_WHICH_NODES_ARE_UNMOVEABLE = %i[cms exported web].freeze
+      TARGETS_FOR_WHICH_NODES_ARE_UNMOVEABLE = %i[cms exported kiddom web].freeze
 
       def update_moveable_nodes?
         TARGETS_FOR_WHICH_NODES_ARE_UNMOVEABLE.exclude? target
