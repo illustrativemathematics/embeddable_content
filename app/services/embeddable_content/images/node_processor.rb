@@ -71,7 +71,7 @@ module EmbeddableContent
       end
 
       def s3_ttl_service_uri
-        @s3_ttl_service_uri ||= URI.parse s3_ttl_service_url
+        @s3_ttl_service_uri ||= URI.parse s3_ttl_url
       end
 
       def attachment_status_matters?

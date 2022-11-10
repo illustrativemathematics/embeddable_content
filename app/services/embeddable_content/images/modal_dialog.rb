@@ -5,7 +5,7 @@ module EmbeddableContent
 
       attr_reader :node_processor
 
-      delegate :record_css_id_for, :s3_ttl_service_url, :caption, :attribution,
+      delegate :record_css_id_for, :s3_ttl_url, :caption, :attribution,
                :alt_text, to: :node_processor
 
       def initialize(node_processor)
@@ -13,7 +13,7 @@ module EmbeddableContent
       end
 
       def img_tag_attrs
-        { src:   s3_ttl_service_url,
+        { src:   s3_ttl_url,
           width: '80%',
           alt:   strip_tags(alt_text),
           role:  :image }
