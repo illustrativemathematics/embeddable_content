@@ -70,5 +70,6 @@ $ gem push embeddable_content-0.2.0.gem
 
 | Version | Changes                                                                                                       |
 | ---     | ---                                                                                                           |
+| 1.0.1   | Major version corresponds to upgrading CMS to Rails 7. IIAB should continue using 0.x.x releases for now.     |
 | 0.3.1   | Meaningless change as I (EDC) experiment with gem host.                                                       |
 | 0.2.0   | NIMAS export now using embedder for TeX. However, the embedder is not yet using the full TexExprssions table. |
