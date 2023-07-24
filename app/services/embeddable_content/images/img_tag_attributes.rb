@@ -28,7 +28,7 @@ module EmbeddableContent
         when :cms                     then cms_url
         when :editable                then downloaded_file_url
         when :exported, :qti          then s3_url with_extension: false
-        when :print, :web             then s3_ttl_url
+        when :print, :web             then record.cdn_url
         end
       end
 
